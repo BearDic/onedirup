@@ -1,6 +1,7 @@
 # OneDirUp
 
 onedrivecmd Directory Upload
+onedrivecmd 的目录上传脚本
 
 ## 功能
 
