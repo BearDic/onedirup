@@ -2,6 +2,8 @@
 
 onedrivecmd Directory Upload
 
+onedrivecmd 的目录上传脚本
+
 ## 功能
 
 使用递归的方式弥补了 onedrivecmd 不带目录上传功能的缺陷, 且能够在失败时自动重试. 
