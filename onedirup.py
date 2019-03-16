@@ -2,7 +2,7 @@ import os,sys,re
 from time import sleep
 
 global conf
-conf={}
+conf={"--dry-run": False, "--no-try-again": False}
 # upload files recursively. src[-1] shouldn't be "/" but dest[-1] must be "/".
 def upload(src,dest):
 	if (os.path.isdir(src)):
@@ -13,10 +13,10 @@ def upload(src,dest):
 	else:
 		cmd="onedrivecmd put \""+src+"\" \""+dest+"\""
 		print("\n\033[36m>"+cmd+"\033[0m")
-		if "--dry-run" in conf:
+		if (conf["--dry-run"]):
 			print("Not exec because of '--dry-run'.")
 		else:
-			if "--no-try-again" not in conf:
+			if (conf["--no-try-again"]==False):
 				while (True):
 					print("Try transfering...")
 					try:
@@ -35,12 +35,15 @@ def upload(src,dest):
 					
 			else:
 				os.system(cmd)
-				print(1)
 
 src=sys.argv[1]
 dest=sys.argv[2]
 for i in range(3,len(sys.argv)):
-	conf[sys.argv[i]]=True
+	if sys.argv[i] in conf:
+		conf[sys.argv[i]]=True
+	else:
+		print("\033[31mUnknown option \""+sys.argv[i]+"\". Aborted.\033[0m")
+		exit()
 if (src[-1]=='/'):
 	src=src[:-1]
 if (dest[-1]!="/"):

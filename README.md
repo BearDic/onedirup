@@ -4,7 +4,7 @@ onedrivecmd Directory Upload
 
 ## 功能
 
-使用递归的方式弥补了 onedrivecmd 不带目录上传的功能, 且能够在失败时自动重试. 
+使用递归的方式弥补了 onedrivecmd 不带目录上传功能的缺陷, 且能够在失败时自动重试. 
 
 此处的失败仅限于: python 抛出异常, 或者提示 `Annotations must be specified before other elements in a JSON object`. 重试次数目前为无限次. 
 
