@@ -11,6 +11,7 @@ def upload(src,dest):
 			sleep(1)
 			upload(src+"/"+file,ndest)
 	else:
+		os.system("echo [\"$(date +%F\\ %T)\"]")
 		cmd="onedrivecmd put \""+src+"\" \""+dest+"\""
 		print("\n\033[36m>"+cmd+"\033[0m")
 		if (conf["--dry-run"]):
