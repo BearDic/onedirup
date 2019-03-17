@@ -1,3 +1,5 @@
+> ### 该库已关闭且不再维护. 因为与其在外面骚写脚本, 不如直接进去改 onedrivecmd 的源码. 请移步[至此](https://github.com/BearDic/onedrivecmd).
+
 # OneDirUp
 
 onedrivecmd Directory Upload
